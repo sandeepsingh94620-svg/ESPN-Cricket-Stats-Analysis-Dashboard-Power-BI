@@ -12,3 +12,11 @@ Live Link: https://app.powerbi.com/links/d8-NeYVWZ8?ctid=e0d6db51-483a-41a8-bc9f
 
 🗂️ Data Source
 • 🌐 Web Scraping (ESPN Cricket Data) to collect match, player, and team performance statistics.
+
+# Dax Calculation
+Absolute Deviation = ABS(Batting[Deviation]) 
+Category = LOOKUPVALUE('Strike Rate Table'[Category],'Strike Rate Table'[Strike Rate],Batting[SR])
+Deviation = Batting[Runs]-AVERAGE(Batting[Runs]) 
+Rank = RANKX(ALL(Batting),Batting[SR],,DESC,Dense)
+Squared Deviation = POWER(Batting[Deviation],2) 
+
